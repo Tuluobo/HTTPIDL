@@ -14,6 +14,7 @@ public protocol HTTPSession {
 
 public protocol HTTPRequestFuture: class {
     
+    var task: URLSessionDataTask? { get set }
     var request: HTTPRequest {get}
     var progressHandler: ((_ progress: Progress) -> Void)? {get set}
     var responseHandler: ((_ response: HTTPResponse) -> Void)? {get set}

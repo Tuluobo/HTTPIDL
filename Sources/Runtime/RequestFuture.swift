@@ -14,6 +14,10 @@ public class RequestFuture<Response> {
         futureImpl?.cancel()
     }
     
+    public var task: URLSessionTask? {
+        return futureImpl?.task
+    }
+    
     internal weak var futureImpl: HTTPRequestFuture?
     public let request: Request
     public var progressHandler: ((_ progress: Progress) -> Void)?
